@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Заказы</h2>
+    <ul>
+        {% for order in order_list %}
+            <li>Имя {{ order.first_name }} Фамилия {{ order.last_name }} Пицца {{ order.pizza.name }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'order' %}">Сделать заказ</a></p>
+{% endblock %}
